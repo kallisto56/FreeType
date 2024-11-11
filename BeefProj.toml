@@ -1,0 +1,22 @@
+FileVersion = 1
+Dependencies = {corlib = "*", corlib = "*"}
+
+[Project]
+Name = "FreeType"
+Version = "0.1"
+
+[Configs.Debug.Win64]
+LibPaths = ["$(ProjectDir)/dist/$(Configuration)_$(Platform)/freetype.lib"]
+PostBuildCmds = ["CopyToDependents(\"$(ProjectDir)/dist/$(Configuration)_$(Platform)/freetype.dll\")"]
+
+[Configs.Release.Win64]
+LibPaths = ["$(ProjectDir)/dist/$(Configuration)_$(Platform)/freetype.lib"]
+PostBuildCmds = ["CopyToDependents(\"$(ProjectDir)/dist/$(Configuration)_$(Platform)/freetype.dll\")"]
+
+[Configs.Paranoid.Win64]
+LibPaths = ["$(ProjectDir)/dist/$(Configuration)_$(Platform)/freetype.lib"]
+PostBuildCmds = ["CopyToDependents(\"$(ProjectDir)/dist/$(Configuration)_$(Platform)/freetype.dll\")"]
+
+[Configs.Test.Win64]
+LibPaths = ["$(ProjectDir)/dist/$(Configuration)_$(Platform)/freetype.lib"]
+PostBuildCmds = ["CopyToDependents(\"$(ProjectDir)/dist/$(Configuration)_$(Platform)/freetype.dll\")"]
