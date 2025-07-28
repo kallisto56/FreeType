@@ -31,6 +31,13 @@ static
 
 
 	/**
+	* Call @FT_Open_Face to open a font that has been loaded into memory.
+	*/
+	[CallingConvention(.Cdecl), CLink, LinkName(.C)]
+	static public extern FT_Err FT_New_Memory_Face (FT_Library library, /*const*/FT_Byte* file_base, FT_Long file_size, FT_Long face_index, out FT_Face aface);
+
+
+	/**
 	 * Call @FT_Request_Size to request the nominal size (in points).
 	 */
 	[CallingConvention(.Cdecl), CLink, LinkName(.C)]
