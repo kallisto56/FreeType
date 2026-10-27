@@ -1,4 +1,7 @@
 .DS_Store
 **/build/*
 **/recovery/*
+**/vendor/src/*
+**/vendor/tmp/*
+**/vendor/dst/*
 BeefSpace_User.toml

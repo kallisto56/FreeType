@@ -5,18 +5,26 @@ Dependencies = {corlib = "*", corlib = "*"}
 Name = "FreeType"
 Version = "0.1"
 
+[Platform.Windows]
+IconFile = "./dist/favicon.ico"
+
 [Configs.Debug.Win64]
-LibPaths = ["$(ProjectDir)/dist/$(Configuration)_$(Platform)/freetype.lib"]
-PostBuildCmds = ["CopyToDependents(\"$(ProjectDir)/dist/$(Configuration)_$(Platform)/freetype.dll\")"]
+LibPaths = ["$(ProjectDir)/dist/$(Configuration)_$(Platform)/lib/freetyped.lib", "$(ProjectDir)/dist/$(Configuration)_$(Platform)/lib/harfbuzz.lib"]
+PostBuildCmds = ["CopyToDependents(\"$(ProjectDir)/dist/$(Configuration)_$(Platform)/bin/freetyped.dll\")\nCopyToDependents(\"$(ProjectDir)/dist/$(Configuration)_$(Platform)/bin/harfbuzz.dll\")"]
 
 [Configs.Release.Win64]
-LibPaths = ["$(ProjectDir)/dist/$(Configuration)_$(Platform)/freetype.lib"]
-PostBuildCmds = ["CopyToDependents(\"$(ProjectDir)/dist/$(Configuration)_$(Platform)/freetype.dll\")"]
+LibPaths = ["$(ProjectDir)/dist/$(Configuration)_$(Platform)/freetyped.lib", "$(ProjectDir)/dist/$(Configuration)_$(Platform)/harfbuzz.lib"]
+PostBuildCmds = ["CopyToDependents(\"$(ProjectDir)/dist/$(Configuration)_$(Platform)/freetyped.dll\")\nCopyToDependents(\"$(ProjectDir)/dist/$(Configuration)_$(Platform)/harfbuzz.dll\")"]
 
 [Configs.Paranoid.Win64]
-LibPaths = ["$(ProjectDir)/dist/$(Configuration)_$(Platform)/freetype.lib"]
-PostBuildCmds = ["CopyToDependents(\"$(ProjectDir)/dist/$(Configuration)_$(Platform)/freetype.dll\")"]
+LibPaths = ["$(ProjectDir)/dist/$(Configuration)_$(Platform)/freetyped.lib", "$(ProjectDir)/dist/$(Configuration)_$(Platform)/harfbuzz.lib"]
+PostBuildCmds = ["CopyToDependents(\"$(ProjectDir)/dist/$(Configuration)_$(Platform)/freetyped.dll\")\nCopyToDependents(\"$(ProjectDir)/dist/$(Configuration)_$(Platform)/harfbuzz.dll\")"]
 
 [Configs.Test.Win64]
-LibPaths = ["$(ProjectDir)/dist/$(Configuration)_$(Platform)/freetype.lib"]
-PostBuildCmds = ["CopyToDependents(\"$(ProjectDir)/dist/$(Configuration)_$(Platform)/freetype.dll\")"]
+LibPaths = ["$(ProjectDir)/dist/$(Configuration)_$(Platform)/freetyped.lib", "$(ProjectDir)/dist/$(Configuration)_$(Platform)/harfbuzz.lib"]
+PostBuildCmds = ["CopyToDependents(\"$(ProjectDir)/dist/$(Configuration)_$(Platform)/freetyped.dll\")\nCopyToDependents(\"$(ProjectDir)/dist/$(Configuration)_$(Platform)/harfbuzz.dll\")"]
+
+[[ProjectFolder.Items]]
+Type = "Folder"
+Path = "dist"
+AutoInclude = true
